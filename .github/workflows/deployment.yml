@@ -1,31 +1,31 @@
-# name: Deploy project
+name: Deploy project
 
-# on:
-#   push:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
 
-# jobs:
-#   test:
-#     runs-on: ubuntu-latest
+jobs:
+  test:
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - name: Get code
-#         uses: actions/checkout@v4
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
 
-#       - name: Validate project files
-#         run: |
-#           echo "Checking HTML, CSS, and JavaScript files..."
-#           test -f index.html
-#           echo "Project files checked successfully!"
+      - name: Validate project files
+        run: |
+          echo "Checking HTML, CSS, and JavaScript files..."
+          test -f index.html
+          echo "Project files checked successfully!"
 
-#   deploy:
-#     needs: test
-#     runs-on: ubuntu-latest
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - name: Get code
-#         uses: actions/checkout@v4
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
 
-#       - name: Deploy to server
-#         run: echo "Deploying HTML, CSS, and JavaScript files..."
+      - name: Deploy to server
+        run: echo "Deploying HTML, CSS, and JavaScript files..."
