@@ -11,7 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: node:22
-
+    services:
+      mongodb:
+        image: mongo:latest
+        ports:
+          - 27017:27017
     steps:
       - name: Get code
         uses: actions/checkout@v4
